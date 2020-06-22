@@ -1,0 +1,7 @@
+C:\Users\s_10253_net\Desktop\scrum\Projet\Scrum\Programme Scrum\bin\Debug\Programme Scrum.exe.config
+C:\Users\s_10253_net\Desktop\scrum\Projet\Scrum\Programme Scrum\bin\Debug\Programme Scrum.exe
+C:\Users\s_10253_net\Desktop\scrum\Projet\Scrum\Programme Scrum\bin\Debug\Programme Scrum.pdb
+C:\Users\s_10253_net\Desktop\scrum\Projet\Scrum\Programme Scrum\obj\Debug\Programme Scrum.csprojAssemblyReference.cache
+C:\Users\s_10253_net\Desktop\scrum\Projet\Scrum\Programme Scrum\obj\Debug\Programme Scrum.csproj.CoreCompileInputs.cache
+C:\Users\s_10253_net\Desktop\scrum\Projet\Scrum\Programme Scrum\obj\Debug\Programme Scrum.exe
+C:\Users\s_10253_net\Desktop\scrum\Projet\Scrum\Programme Scrum\obj\Debug\Programme Scrum.pdb
