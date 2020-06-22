@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Programme_Scrum
 {
@@ -23,14 +21,15 @@ namespace Programme_Scrum
 
         public static void CallMenu(Dictionary<int,Func<string>> dic, int a) 
         {
-            dic.Add(dic.Last().Key + 1, Menu.Test);
+            dic.Add(dic.Last().Key + 1, Exit);
             var call = dic.Where(k => k.Key == a).FirstOrDefault().Value.DynamicInvoke();
             Console.WriteLine(call);
         }
 
-        public static string Test()
+        public static string Exit()
         {
-            return "Hello there";
+            Environment.Exit(-1);
+            return "";
         }
     }
 }
