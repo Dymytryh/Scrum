@@ -23,7 +23,6 @@ namespace Programme_Scrum
                    string nomRealisateur = iter.Current.SelectSingleNode("REALISATOR").Value;
                    string noteFilm = iter.Current.SelectSingleNode("NOTE").Value;
                */
-
                 Console.WriteLine(index + ": " + titreFilm);
                 index++;
             }

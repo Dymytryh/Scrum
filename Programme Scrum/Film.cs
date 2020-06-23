@@ -1,10 +1,13 @@
 ﻿using System;
 using System.IO;
+using System.Text;
 
 namespace Programme_Scrum
 {
     class Film
     {
+        public static int READLINE_BUFFER_SIZE { get; private set; }
+
         public static string EncodageFilm()
         {
             bool isOk = false;
@@ -37,11 +40,14 @@ namespace Programme_Scrum
                     }
 
                     Console.Write("Entrez votre critique du film: ");
+                    Console.SetIn(new StreamReader(Console.OpenStandardInput(),
+                                Console.InputEncoding,
+                                false,
+                                bufferSize: 1024));
                     string critique = Console.ReadLine();
 
                     while (critique.Length <= 100 || critique.Length >= 1000)
                     {
-                        Console.Write("Votre critique doit contenir entre 100 et 1000 caractères: ");
                         critique = Console.ReadLine();
                     }
 
@@ -50,7 +56,7 @@ namespace Programme_Scrum
                       Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
                  
-                    StreamWriter sw = new StreamWriter(Path.Combine(docPath, titre + ".xml"));
+                    StreamWriter sw = new StreamWriter(Path.Combine(docPath, "titre.xml"));
                     sw.WriteLine("<MOVIE>");
                     sw.WriteLine("<TITLE>" + titre + "</TITLE>");
                     sw.WriteLine("<DATE>" + date + "</DATE>");
@@ -69,6 +75,6 @@ namespace Programme_Scrum
             } while (!isOk);
 
                 return "";
-        }
+        }       
     }
 }

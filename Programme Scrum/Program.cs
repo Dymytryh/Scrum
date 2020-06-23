@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Text;
 
 namespace Programme_Scrum
 {
     class Program
     {
-         public static void nettoyerConsole()
+        public static int READLINE_BUFFER_SIZE { get; private set; }
+
+        public static void nettoyerConsole()
          {
               Console.Clear();
          }
@@ -27,5 +31,7 @@ namespace Programme_Scrum
                 Console.ReadKey();
             } while (a != menu.Count + 1);
         }
+
+        
     }
 }
