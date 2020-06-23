@@ -7,6 +7,10 @@ namespace Programme_Scrum
     {
         static void Main(string[] args)
         {
+             public static void nettoyerConsole()
+            {
+                Console.Clear();
+            }
 
             List<string> menu = new List<string>(new string[] { "Encodage d'un film"});
             int a = 0;
