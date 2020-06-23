@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Film.cs" />
     <Compile Include="Menu.cs" />
+    <Compile Include="MenuFilm.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

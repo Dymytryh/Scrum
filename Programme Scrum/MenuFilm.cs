@@ -1,8 +1,5 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 using System.Xml.XPath;
 
@@ -81,7 +78,7 @@ namespace Programme_Scrum
 
 
 
-        public static int afficherMenuFilm()
+        public static string afficherMenuFilm()
         {
 
             while (true)
@@ -95,7 +92,8 @@ namespace Programme_Scrum
                     int choixMenuUtilisateur = Convert.ToInt32(Console.ReadLine());
                     if (choixMenuUtilisateur==1 || choixMenuUtilisateur==2 || choixMenuUtilisateur == 3)
                     {
-                        return choixMenuUtilisateur;
+                        //return choixMenuUtilisateur;
+                        return "";
                     }
                     
                 }
