@@ -37,6 +37,10 @@ namespace Programme_Scrum
                     }
 
                     Console.Write("Entrez votre critique du film: ");
+                    Console.SetIn(new StreamReader(Console.OpenStandardInput(),
+                               Console.InputEncoding,
+                               false,
+                               bufferSize: 1024));
                     string critique = Console.ReadLine();
 
                     while (critique.Length <= 100 || critique.Length >= 1000)
@@ -46,22 +50,56 @@ namespace Programme_Scrum
                     }
 
                     // Set a variable to the Documents path.
-                    string docPath =
-                      Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                    string docPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
                  
-                    StreamWriter sw = new StreamWriter(Path.Combine(docPath, titre + ".xml"));
+                    StreamWriter sw = new StreamWriter(Path.Combine(docPath, "titre.xml"));
                     sw.WriteLine("<MOVIE>");
                     sw.WriteLine("<TITLE>" + titre + "</TITLE>");
                     sw.WriteLine("<DATE>" + date + "</DATE>");
                     sw.WriteLine("<REALISATOR>" + realisateur + "</REALISATOR>");
                     sw.WriteLine("<NOTE>" + note + "</NOTE>");
                     sw.WriteLine("<CRITIQUE>" + critique + "</CRITIQUE>");
+                    sw.Close();
+                    string line = null;
+                    int line_number = 0;
+                    long line_to_delete = 0;
+                    using (var reader = new StreamReader(Path.Combine(docPath, "titre.xml")))
+                    {
+                        while (reader.ReadLine() != null)
+                        {
+                            line_to_delete++;
+                        }
+                        reader.Close();
+                    }
+
+                    //using (StreamReader reader = new StreamReader(Path.Combine(docPath, "titre.xml")))
+                    //{
+                    //    using (StreamWriter writer = new StreamWriter(Path.Combine(docPath, "titre.xml")))
+                    //    {
+                    //        while ((line = reader.ReadLine()) != null)
+                    //        {
+                    //            line_number++;
+
+                    //            if (line_number == line_to_delete)
+                    //                continue;
+
+                    //            writer.WriteLine(line);
+                    //            writer.Close();
+                    //        }
+                    //    }reader.Close();
+                    //    }
+
+                    sw = new StreamWriter(Path.Combine(docPath, "titre.xml"));
                     sw.WriteLine("</MOVIE>");
+
+
+
                     sw.Close();
                     Console.WriteLine("Film sauvegardé !");
                     isOk = true;
                 }
+                
                 catch (Exception e)
                 {
                     Console.WriteLine("Exception: " + e.Message);

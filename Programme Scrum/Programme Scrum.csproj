@@ -65,6 +65,7 @@
     <Compile Include="Film.cs" />
     <Compile Include="GestionAdmin.cs" />
     <Compile Include="Menu.cs" />
+    <Compile Include="MenuFilm.cs" />
     <Compile Include="Meteo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

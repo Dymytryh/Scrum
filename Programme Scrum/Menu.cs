@@ -20,12 +20,26 @@ namespace Programme_Scrum
            
         }
 
-        public static void CallMenu(Dictionary<int,Func<string>> dic, int a) 
+        public static void CallMenu(Dictionary<int, Func<string>> dic, int a)
         {
-            Program.nettoyerConsole();
             dic.Add(dic.Last().Key + 1, Exit);
-            var call = dic.Where(k => k.Key == a).FirstOrDefault().Value.DynamicInvoke();
-            Console.WriteLine(call);
+            if (dic.ContainsKey(a))
+            {
+                try
+                {
+                    Program.nettoyerConsole();
+                    var call = dic.Where(k => k.Key == a).FirstOrDefault().Value.DynamicInvoke();
+                    Console.WriteLine(call);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Exception: " + e.Message);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Entrez un nombre correcte");
+            }
         }
 
         public static string Exit()
