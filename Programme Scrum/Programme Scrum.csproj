@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Film.cs" />
+    <Compile Include="GestionAdmin.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Meteo.cs" />
     <Compile Include="Program.cs" />

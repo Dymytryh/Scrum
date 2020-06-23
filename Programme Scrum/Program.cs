@@ -15,6 +15,7 @@ namespace Programme_Scrum
             
 
             List<string> menu = new List<string>(new string[] { "Encodage d'un film","Affichage de la météo"});
+            menu.Add("S'enregistrer en tant qu'administrateur");
             int a = 0;
 
             do
@@ -24,6 +25,7 @@ namespace Programme_Scrum
                 Dictionary<int, Func<string>> dic = new Dictionary<int, Func<string>>();
                 dic.Add(1, Film.EncodageFilm);
                 dic.Add(2, Meteo.AfficheMeteo);
+                dic.Add(3, GestionAdmin.AjoutAdmin);
                 Menu.CallMenu(dic, a);
                 Console.ReadKey();
             } while (a != menu.Count + 1);

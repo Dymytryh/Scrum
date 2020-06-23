@@ -2,8 +2,6 @@
 using System.Net;
 using System.IO;
 using Newtonsoft.Json;
-using System.Linq;
-using System.Runtime.Serialization;
 using System.Collections.Generic;
 
 namespace Programme_Scrum
@@ -30,7 +28,6 @@ namespace Programme_Scrum
             MeteoModel bsObj = JsonConvert.DeserializeObject<MeteoModel>(strresulttest);
 
             Console.WriteLine("La température relevée à " + bsObj.Location.Name +" est de " + bsObj.Current.Temperature +"°c");
-            //Console.WriteLine(bsObj.Current.Temperature);
             Console.WriteLine("La vitesse du vent est de " + bsObj.Current.WindSpeed +"Km/H");
             
 
