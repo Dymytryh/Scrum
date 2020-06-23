@@ -8,6 +8,7 @@ namespace Programme_Scrum
     {
         public static void WriteMenu(List<string> list)
         {
+            Program.nettoyerConsole();
             int place = 1;
             foreach (var element in list)
             {
@@ -21,6 +22,7 @@ namespace Programme_Scrum
 
         public static void CallMenu(Dictionary<int,Func<string>> dic, int a) 
         {
+            Program.nettoyerConsole();
             dic.Add(dic.Last().Key + 1, Exit);
             var call = dic.Where(k => k.Key == a).FirstOrDefault().Value.DynamicInvoke();
             Console.WriteLine(call);
