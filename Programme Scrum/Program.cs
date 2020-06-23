@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace Programme_Scrum
 {
+     public static void nettoyerConsole()
+     {
+         Console.Clear();
+     }
     class Program
     {
         static void Main(string[] args)
